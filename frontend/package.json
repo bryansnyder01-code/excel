@@ -1,0 +1,35 @@
+{
+  "name": "sheetcraft-ai-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "build:desktop": "node scripts/build-desktop.mjs",
+    "start": "next start -p 3000",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "check:formulas": "tsx scripts/check-formulas.ts",
+    "check:grid": "tsx scripts/check-grid.ts",
+    "check:tools": "tsx scripts/check-tools.ts",
+    "check:ai": "tsx scripts/check-ai.ts"
+  },
+  "dependencies": {
+    "@formulajs/formulajs": "4.6.1",
+    "fast-formula-parser": "1.0.19",
+    "lucide-react": "0.468.0",
+    "next": "15.5.27",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "zustand": "5.0.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.1.11",
+    "@types/node": "22.10.2",
+    "@types/react": "19.1.8",
+    "@types/react-dom": "19.1.6",
+    "tailwindcss": "4.1.11",
+    "tsx": "4.19.2",
+    "typescript": "5.7.2"
+  }
+}

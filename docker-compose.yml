@@ -1,0 +1,43 @@
+# SheetCraft AI: backend on :8000, frontend on :3000.
+#   ANTHROPIC_API_KEY=sk-ant-... docker compose up --build
+# For a real domain, set SHEETCRAFT_APP_URL / SHEETCRAFT_CORS_ORIGINS to the site's URL and
+# NEXT_PUBLIC_API_URL to the backend's public URL (it's compiled into the frontend).
+services:
+  backend:
+    build:
+      context: ./backend
+      args:
+        WITH_PDF: ${WITH_PDF:-0}
+    environment:
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:?Set ANTHROPIC_API_KEY}
+      SHEETCRAFT_DATA_DIR: /data
+      # A JSON list.
+      SHEETCRAFT_CORS_ORIGINS: ${SHEETCRAFT_CORS_ORIGINS:-["http://localhost:3000"]}
+      SHEETCRAFT_APP_URL: ${SHEETCRAFT_APP_URL:-http://localhost:3000}
+      SHEETCRAFT_MODEL: ${SHEETCRAFT_MODEL:-claude-sonnet-5-5}
+      SHEETCRAFT_GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-}
+      SHEETCRAFT_SMTP_HOST: ${SHEETCRAFT_SMTP_HOST:-}
+      SHEETCRAFT_SMTP_PORT: ${SHEETCRAFT_SMTP_PORT:-587}
+      SHEETCRAFT_SMTP_USER: ${SHEETCRAFT_SMTP_USER:-}
+      SHEETCRAFT_SMTP_PASSWORD: ${SHEETCRAFT_SMTP_PASSWORD:-}
+      SHEETCRAFT_SMTP_FROM: ${SHEETCRAFT_SMTP_FROM:-}
+    volumes:
+      - sheetcraft-data:/data
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:8000}
+        NEXT_PUBLIC_GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-}
+    depends_on:
+      - backend
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+
+volumes:
+  sheetcraft-data:

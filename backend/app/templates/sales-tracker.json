@@ -1,0 +1,232 @@
+{
+ "id": "sales-tracker",
+ "title": "Sales tracker",
+ "category": "Sales",
+ "description": "Quarterly sales by rep with totals, averages and a top performer flag.",
+ "workbook": {
+  "title": "Sales Tracker",
+  "sheets": [
+   {
+    "name": "Sales",
+    "columns": [
+     {
+      "header": "Rep",
+      "format": "text"
+     },
+     {
+      "header": "Q1",
+      "format": "currency"
+     },
+     {
+      "header": "Q2",
+      "format": "currency"
+     },
+     {
+      "header": "Q3",
+      "format": "currency"
+     },
+     {
+      "header": "Q4",
+      "format": "currency"
+     },
+     {
+      "header": "Total",
+      "format": "currency"
+     },
+     {
+      "header": "Quarterly avg",
+      "format": "currency"
+     },
+     {
+      "header": "Flag",
+      "format": "text"
+     }
+    ],
+    "rows": [
+     {
+      "cells": [
+       {
+        "value": "Ava Chen"
+       },
+       {
+        "value": 42000
+       },
+       {
+        "value": 51000
+       },
+       {
+        "value": 47500
+       },
+       {
+        "value": 60200
+       },
+       {
+        "value": "=SUM(B2:E2)"
+       },
+       {
+        "value": "=AVERAGE(B2:E2)"
+       },
+       {
+        "value": "=IF(F2=MAX($F$2:$F$6),\"Top performer\",\"\")"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": "Liam Patel"
+       },
+       {
+        "value": 38500
+       },
+       {
+        "value": 36000
+       },
+       {
+        "value": 44100
+       },
+       {
+        "value": 48800
+       },
+       {
+        "value": "=SUM(B3:E3)"
+       },
+       {
+        "value": "=AVERAGE(B3:E3)"
+       },
+       {
+        "value": "=IF(F3=MAX($F$2:$F$6),\"Top performer\",\"\")"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": "Sofia Garcia"
+       },
+       {
+        "value": 51200
+       },
+       {
+        "value": 49800
+       },
+       {
+        "value": 55300
+       },
+       {
+        "value": 58100
+       },
+       {
+        "value": "=SUM(B4:E4)"
+       },
+       {
+        "value": "=AVERAGE(B4:E4)"
+       },
+       {
+        "value": "=IF(F4=MAX($F$2:$F$6),\"Top performer\",\"\")"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": "Noah Kim"
+       },
+       {
+        "value": 29900
+       },
+       {
+        "value": 34500
+       },
+       {
+        "value": 31200
+       },
+       {
+        "value": 39700
+       },
+       {
+        "value": "=SUM(B5:E5)"
+       },
+       {
+        "value": "=AVERAGE(B5:E5)"
+       },
+       {
+        "value": "=IF(F5=MAX($F$2:$F$6),\"Top performer\",\"\")"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": "Mia Johnson"
+       },
+       {
+        "value": 45600
+       },
+       {
+        "value": 47200
+       },
+       {
+        "value": 52900
+       },
+       {
+        "value": 50300
+       },
+       {
+        "value": "=SUM(B6:E6)"
+       },
+       {
+        "value": "=AVERAGE(B6:E6)"
+       },
+       {
+        "value": "=IF(F6=MAX($F$2:$F$6),\"Top performer\",\"\")"
+       }
+      ]
+     },
+     {
+      "kind": "total",
+      "cells": [
+       {
+        "value": "Team total"
+       },
+       {
+        "value": "=SUM(B2:B6)"
+       },
+       {
+        "value": "=SUM(C2:C6)"
+       },
+       {
+        "value": "=SUM(D2:D6)"
+       },
+       {
+        "value": "=SUM(E2:E6)"
+       },
+       {
+        "value": "=SUM(F2:F6)"
+       },
+       {
+        "value": "=SUM(G2:G6)"
+       },
+       {
+        "value": null
+       }
+      ]
+     }
+    ],
+    "charts": [
+     {
+      "type": "column",
+      "title": "Total sales by rep",
+      "categories": "A2:A6",
+      "series": [
+       {
+        "name": "Total",
+        "range": "F2:F6"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

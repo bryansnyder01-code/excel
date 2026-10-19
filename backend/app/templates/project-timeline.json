@@ -1,0 +1,209 @@
+{
+ "id": "project-timeline",
+ "title": "Project timeline",
+ "category": "Projects",
+ "description": "Tasks, owners, dates, status dropdown and days remaining.",
+ "workbook": {
+  "title": "Project Timeline",
+  "sheets": [
+   {
+    "name": "Timeline",
+    "columns": [
+     {
+      "header": "Task",
+      "format": "text",
+      "width": 24
+     },
+     {
+      "header": "Owner",
+      "format": "text"
+     },
+     {
+      "header": "Start",
+      "format": "date"
+     },
+     {
+      "header": "End",
+      "format": "date"
+     },
+     {
+      "header": "Status",
+      "format": "text"
+     },
+     {
+      "header": "Duration (days)",
+      "format": "integer"
+     },
+     {
+      "header": "Days remaining",
+      "format": "integer"
+     }
+    ],
+    "rows": [
+     {
+      "cells": [
+       {
+        "value": "Kickoff and scope"
+       },
+       {
+        "value": "Ava"
+       },
+       {
+        "value": "2026-10-01"
+       },
+       {
+        "value": "2026-10-07"
+       },
+       {
+        "value": "Done"
+       },
+       {
+        "value": "=D2-C2"
+       },
+       {
+        "value": "=IF(E2=\"Done\",0,MAX(D2-TODAY(),0))"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": "Requirements"
+       },
+       {
+        "value": "Liam"
+       },
+       {
+        "value": "2026-10-06"
+       },
+       {
+        "value": "2026-10-17"
+       },
+       {
+        "value": "Done"
+       },
+       {
+        "value": "=D3-C3"
+       },
+       {
+        "value": "=IF(E3=\"Done\",0,MAX(D3-TODAY(),0))"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": "Design"
+       },
+       {
+        "value": "Sofia"
+       },
+       {
+        "value": "2026-10-15"
+       },
+       {
+        "value": "2026-11-07"
+       },
+       {
+        "value": "In progress"
+       },
+       {
+        "value": "=D4-C4"
+       },
+       {
+        "value": "=IF(E4=\"Done\",0,MAX(D4-TODAY(),0))"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": "Build"
+       },
+       {
+        "value": "Noah"
+       },
+       {
+        "value": "2026-11-01"
+       },
+       {
+        "value": "2026-12-12"
+       },
+       {
+        "value": "Not started"
+       },
+       {
+        "value": "=D5-C5"
+       },
+       {
+        "value": "=IF(E5=\"Done\",0,MAX(D5-TODAY(),0))"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": "Testing"
+       },
+       {
+        "value": "Mia"
+       },
+       {
+        "value": "2026-12-08"
+       },
+       {
+        "value": "2026-12-23"
+       },
+       {
+        "value": "Not started"
+       },
+       {
+        "value": "=D6-C6"
+       },
+       {
+        "value": "=IF(E6=\"Done\",0,MAX(D6-TODAY(),0))"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": "Launch"
+       },
+       {
+        "value": "Ava"
+       },
+       {
+        "value": "2027-01-05"
+       },
+       {
+        "value": "2027-01-08"
+       },
+       {
+        "value": "Not started"
+       },
+       {
+        "value": "=D7-C7"
+       },
+       {
+        "value": "=IF(E7=\"Done\",0,MAX(D7-TODAY(),0))"
+       }
+      ]
+     }
+    ],
+    "validations": [
+     {
+      "range": "E2:E200",
+      "type": "list",
+      "options": [
+       "Not started",
+       "In progress",
+       "Blocked",
+       "Done"
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

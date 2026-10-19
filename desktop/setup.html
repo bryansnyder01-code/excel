@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'unsafe-inline'; script-src 'unsafe-inline'" />
+    <title>SheetCraft AI</title>
+    <style>
+      :root { color-scheme: light dark; --bg: #ffffff; --text: #0f172a; --muted: #475569; --border: #cbd5e1; --brand: #15803d; --brand-dark: #166534; --error: #b91c1c; }
+      @media (prefers-color-scheme: dark) { :root { --bg: #0b1220; --text: #e2e8f0; --muted: #94a3b8; --border: #334155; --brand: #22c55e; --brand-dark: #16a34a; --error: #f87171; } }
+      * { box-sizing: border-box; }
+      body { margin: 0; padding: 32px 36px; background: var(--bg); color: var(--text); font: 14px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+      h1 { margin: 0 0 4px; font-size: 20px; display: flex; align-items: center; gap: 10px; }
+      p { color: var(--muted); margin: 8px 0 16px; }
+      label { display: block; font-weight: 600; margin-bottom: 6px; }
+      input { width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; font: inherit; background: transparent; color: var(--text); }
+      input:focus-visible, button:focus-visible, a:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+      button { margin-top: 16px; width: 100%; padding: 10px; border: 0; border-radius: 8px; background: var(--brand); color: #fff; font: 600 14px system-ui, sans-serif; cursor: pointer; }
+      button:hover { background: var(--brand-dark); }
+      button:disabled { opacity: 0.6; cursor: default; }
+      #error { color: var(--error); min-height: 21px; margin: 10px 0 0; }
+      ol { color: var(--muted); padding-left: 20px; margin: 0 0 18px; }
+      a { color: var(--brand); }
+      small { display: block; color: var(--muted); margin-top: 14px; }
+    </style>
+  </head>
+  <body>
+    <h1>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M3 9h18M3 15h18M9 3v18M15 3v18" /></svg>
+      Welcome to SheetCraft AI
+    </h1>
+    <p>SheetCraft uses Claude to build your spreadsheets. To get started, add your Anthropic API key.</p>
+    <ol>
+      <li>Open <a href="https://console.anthropic.com/settings/keys" target="_blank">console.anthropic.com</a> and sign in.</li>
+      <li>Create a key and copy it.</li>
+      <li>Paste it below.</li>
+    </ol>
+    <form id="form">
+      <label for="key">Anthropic API key</label>
+      <input id="key" type="password" autocomplete="off" spellcheck="false" placeholder="sk-ant-..." autofocus />
+      <div id="error" role="alert"></div>
+      <button id="save" type="submit">Save and start</button>
+    </form>
+    <small>The key is stored only on this computer, encrypted with your system's keychain where available. Change it later from the menu.</small>
+    <script>
+      const form = document.getElementById("form");
+      const input = document.getElementById("key");
+      const error = document.getElementById("error");
+      const save = document.getElementById("save");
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        save.disabled = true;
+        save.textContent = "Checking the key...";
+        error.textContent = "";
+        const res = await window.sheetcraft.saveKey(input.value);
+        if (!res.ok) {
+          error.textContent = res.message;
+          save.disabled = false;
+          save.textContent = "Save and start";
+          input.focus();
+        }
+      });
+    </script>
+  </body>
+</html>

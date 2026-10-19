@@ -1,0 +1,13 @@
+node_modules/
+.next/
+__pycache__/
+.pytest_cache/
+backend/data/
+.env
+.env.local
+*.tsbuildinfo
+# Desktop app builds
+frontend/out/
+backend/build/
+backend/dist/
+desktop/dist/

@@ -1,0 +1,60 @@
+{
+  "name": "sheetcraft-desktop",
+  "productName": "SheetCraft AI",
+  "version": "1.0.0",
+  "description": "SheetCraft AI as a desktop app",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "server": "python scripts/build-server.py",
+    "web": "npm --prefix ../frontend run build:desktop",
+    "start": "electron .",
+    "dist": "electron-builder --publish never"
+  },
+  "build": {
+    "appId": "ai.sheetcraft.desktop",
+    "productName": "SheetCraft AI",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "setup.html",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "../backend/dist/sheetcraft-server",
+        "to": "server"
+      },
+      {
+        "from": "../frontend/out",
+        "to": "web"
+      }
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "mac": {
+      "target": "dmg",
+      "category": "public.app-category.productivity",
+      "identity": "-"
+    },
+    "linux": {
+      "target": "AppImage",
+      "category": "Office"
+    },
+    "publish": [],
+    "artifactName": "SheetCraft-AI-${version}-${os}-${arch}.${ext}"
+  },
+  "devDependencies": {
+    "electron": "38.2.2",
+    "electron-builder": "26.0.12"
+  }
+}

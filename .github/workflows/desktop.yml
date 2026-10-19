@@ -1,0 +1,57 @@
+name: Desktop app
+
+# Builds the Windows installer (.exe) and the Mac app (.dmg, Apple Silicon).
+# Run it from the Actions tab ("Run workflow"), or push a tag like v1.0.0.
+# The installers appear under the run's "Artifacts".
+on:
+  workflow_dispatch:
+  push:
+    tags: ["v*"]
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            target: --win
+            files: desktop/dist/*.exe
+          - os: macos-latest
+            target: --mac
+            files: desktop/dist/*.dmg
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Bundle the backend
+        run: |
+          pip install -r backend/requirements.txt pyinstaller pillow
+          python desktop/scripts/build-server.py
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Build the screens
+        working-directory: frontend
+        run: |
+          npm ci
+          npm run build:desktop
+
+      - name: Package the app
+        working-directory: desktop
+        env:
+          # No code-signing certificate yet; see desktop/README.md.
+          CSC_IDENTITY_AUTO_DISCOVERY: "false"
+        run: |
+          npm ci
+          npx electron-builder ${{ matrix.target }} --publish never
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: SheetCraft-AI-${{ runner.os }}
+          path: ${{ matrix.files }}
+          if-no-files-found: error

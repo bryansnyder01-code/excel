@@ -1,0 +1,576 @@
+{
+  "title": "Small Business Budget H1",
+  "sheets": [
+    {
+      "name": "Income",
+      "columns": [
+        {
+          "header": "Source"
+        },
+        {
+          "header": "Jan",
+          "format": "currency"
+        },
+        {
+          "header": "Feb",
+          "format": "currency"
+        },
+        {
+          "header": "Mar",
+          "format": "currency"
+        },
+        {
+          "header": "Apr",
+          "format": "currency"
+        },
+        {
+          "header": "May",
+          "format": "currency"
+        },
+        {
+          "header": "Jun",
+          "format": "currency"
+        },
+        {
+          "header": "Total",
+          "format": "currency"
+        }
+      ],
+      "rows": [
+        {
+          "cells": [
+            {
+              "value": "Product sales"
+            },
+            {
+              "value": 12000
+            },
+            {
+              "value": 13500
+            },
+            {
+              "value": 12800
+            },
+            {
+              "value": 14200
+            },
+            {
+              "value": 15100
+            },
+            {
+              "value": 16000
+            },
+            {
+              "value": "=SUM(B2:G2)"
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "value": "Consulting"
+            },
+            {
+              "value": 4000
+            },
+            {
+              "value": 3500
+            },
+            {
+              "value": 5200
+            },
+            {
+              "value": 4800
+            },
+            {
+              "value": 5000
+            },
+            {
+              "value": 6100
+            },
+            {
+              "value": "=SUM(B3:G3)"
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "value": "Subscriptions"
+            },
+            {
+              "value": 1800
+            },
+            {
+              "value": 1900
+            },
+            {
+              "value": 2050
+            },
+            {
+              "value": 2100
+            },
+            {
+              "value": 2300
+            },
+            {
+              "value": 2400
+            },
+            {
+              "value": "=SUM(B4:G4)"
+            }
+          ]
+        },
+        {
+          "kind": "total",
+          "cells": [
+            {
+              "value": "Total income"
+            },
+            {
+              "value": "=SUM(B2:B4)"
+            },
+            {
+              "value": "=SUM(C2:C4)"
+            },
+            {
+              "value": "=SUM(D2:D4)"
+            },
+            {
+              "value": "=SUM(E2:E4)"
+            },
+            {
+              "value": "=SUM(F2:F4)"
+            },
+            {
+              "value": "=SUM(G2:G4)"
+            },
+            {
+              "value": "=SUM(H2:H4)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Expenses",
+      "columns": [
+        {
+          "header": "Category"
+        },
+        {
+          "header": "Jan",
+          "format": "currency"
+        },
+        {
+          "header": "Feb",
+          "format": "currency"
+        },
+        {
+          "header": "Mar",
+          "format": "currency"
+        },
+        {
+          "header": "Apr",
+          "format": "currency"
+        },
+        {
+          "header": "May",
+          "format": "currency"
+        },
+        {
+          "header": "Jun",
+          "format": "currency"
+        },
+        {
+          "header": "Total",
+          "format": "currency"
+        },
+        {
+          "header": "Tax (15%)",
+          "format": "currency"
+        },
+        {
+          "header": "Spend Level"
+        }
+      ],
+      "rows": [
+        {
+          "cells": [
+            {
+              "value": "Rent"
+            },
+            {
+              "value": 3000
+            },
+            {
+              "value": 3000
+            },
+            {
+              "value": 3000
+            },
+            {
+              "value": 3000
+            },
+            {
+              "value": 3000
+            },
+            {
+              "value": 3000
+            },
+            {
+              "value": "=SUM(B2:G2)"
+            },
+            {
+              "value": "=H2*0.15"
+            },
+            {
+              "value": "=IF(H2>10000,\"High\",\"Low\")"
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "value": "Payroll"
+            },
+            {
+              "value": 8500
+            },
+            {
+              "value": 8500
+            },
+            {
+              "value": 9000
+            },
+            {
+              "value": 9000
+            },
+            {
+              "value": 9200
+            },
+            {
+              "value": 9200
+            },
+            {
+              "value": "=SUM(B3:G3)"
+            },
+            {
+              "value": "=H3*0.15"
+            },
+            {
+              "value": "=IF(H3>10000,\"High\",\"Low\")"
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "value": "Marketing"
+            },
+            {
+              "value": 1200
+            },
+            {
+              "value": 1500
+            },
+            {
+              "value": 1100
+            },
+            {
+              "value": 1800
+            },
+            {
+              "value": 2000
+            },
+            {
+              "value": 1700
+            },
+            {
+              "value": "=SUM(B4:G4)"
+            },
+            {
+              "value": "=H4*0.15"
+            },
+            {
+              "value": "=IF(H4>10000,\"High\",\"Low\")"
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "value": "Software"
+            },
+            {
+              "value": 450
+            },
+            {
+              "value": 450
+            },
+            {
+              "value": 480
+            },
+            {
+              "value": 480
+            },
+            {
+              "value": 500
+            },
+            {
+              "value": 500
+            },
+            {
+              "value": "=SUM(B5:G5)"
+            },
+            {
+              "value": "=H5*0.15"
+            },
+            {
+              "value": "=IF(H5>10000,\"High\",\"Low\")"
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "value": "Utilities"
+            },
+            {
+              "value": 320
+            },
+            {
+              "value": 300
+            },
+            {
+              "value": 290
+            },
+            {
+              "value": 280
+            },
+            {
+              "value": 310
+            },
+            {
+              "value": 330
+            },
+            {
+              "value": "=SUM(B6:G6)"
+            },
+            {
+              "value": "=H6*0.15"
+            },
+            {
+              "value": "=IF(H6>10000,\"High\",\"Low\")"
+            }
+          ]
+        },
+        {
+          "kind": "total",
+          "cells": [
+            {
+              "value": "Total expenses"
+            },
+            {
+              "value": "=SUM(B2:B6)"
+            },
+            {
+              "value": "=SUM(C2:C6)"
+            },
+            {
+              "value": "=SUM(D2:D6)"
+            },
+            {
+              "value": "=SUM(E2:E6)"
+            },
+            {
+              "value": "=SUM(F2:F6)"
+            },
+            {
+              "value": "=SUM(G2:G6)"
+            },
+            {
+              "value": "=SUM(H2:H6)"
+            },
+            {
+              "value": "=SUM(I2:I6)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Summary",
+      "columns": [
+        {
+          "header": "Month"
+        },
+        {
+          "header": "Income",
+          "format": "currency"
+        },
+        {
+          "header": "Expenses",
+          "format": "currency"
+        },
+        {
+          "header": "Net Profit",
+          "format": "currency"
+        },
+        {
+          "header": "Margin",
+          "format": "percent"
+        }
+      ],
+      "rows": [
+        {
+          "cells": [
+            {
+              "value": "Jan"
+            },
+            {
+              "value": "='Income'!B5"
+            },
+            {
+              "value": "='Expenses'!B7"
+            },
+            {
+              "value": "=B2-C2"
+            },
+            {
+              "value": "=D2/B2"
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "value": "Feb"
+            },
+            {
+              "value": "='Income'!C5"
+            },
+            {
+              "value": "='Expenses'!C7"
+            },
+            {
+              "value": "=B3-C3"
+            },
+            {
+              "value": "=D3/B3"
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "value": "Mar"
+            },
+            {
+              "value": "='Income'!D5"
+            },
+            {
+              "value": "='Expenses'!D7"
+            },
+            {
+              "value": "=B4-C4"
+            },
+            {
+              "value": "=D4/B4"
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "value": "Apr"
+            },
+            {
+              "value": "='Income'!E5"
+            },
+            {
+              "value": "='Expenses'!E7"
+            },
+            {
+              "value": "=B5-C5"
+            },
+            {
+              "value": "=D5/B5"
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "value": "May"
+            },
+            {
+              "value": "='Income'!F5"
+            },
+            {
+              "value": "='Expenses'!F7"
+            },
+            {
+              "value": "=B6-C6"
+            },
+            {
+              "value": "=D6/B6"
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "value": "Jun"
+            },
+            {
+              "value": "='Income'!G5"
+            },
+            {
+              "value": "='Expenses'!G7"
+            },
+            {
+              "value": "=B7-C7"
+            },
+            {
+              "value": "=D7/B7"
+            }
+          ]
+        },
+        {
+          "kind": "total",
+          "cells": [
+            {
+              "value": "Total"
+            },
+            {
+              "value": "=SUM(B2:B7)"
+            },
+            {
+              "value": "=SUM(C2:C7)"
+            },
+            {
+              "value": "=B8-C8"
+            },
+            {
+              "value": "=D8/B8"
+            }
+          ]
+        }
+      ],
+      "conditional_formats": [
+        {
+          "range": "D2:D8",
+          "operator": "negative",
+          "style": "bad"
+        },
+        {
+          "range": "E2:E7",
+          "operator": "greater_than",
+          "value1": 0.25,
+          "style": "good"
+        }
+      ]
+    }
+  ]
+}

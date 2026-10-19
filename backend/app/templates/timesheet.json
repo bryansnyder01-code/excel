@@ -1,0 +1,244 @@
+{
+ "id": "timesheet",
+ "title": "Weekly timesheet",
+ "category": "HR",
+ "description": "Daily hours with breaks, overtime over 8 hours, and gross pay.",
+ "workbook": {
+  "title": "Weekly Timesheet",
+  "sheets": [
+   {
+    "name": "Timesheet",
+    "columns": [
+     {
+      "header": "Date",
+      "format": "date"
+     },
+     {
+      "header": "Day",
+      "format": "text"
+     },
+     {
+      "header": "Start (h)",
+      "format": "decimal"
+     },
+     {
+      "header": "End (h)",
+      "format": "decimal"
+     },
+     {
+      "header": "Break (h)",
+      "format": "decimal"
+     },
+     {
+      "header": "Hours",
+      "format": "decimal"
+     },
+     {
+      "header": "Overtime",
+      "format": "decimal"
+     }
+    ],
+    "rows": [
+     {
+      "cells": [
+       {
+        "value": "2026-10-12"
+       },
+       {
+        "value": "Mon"
+       },
+       {
+        "value": 9.0
+       },
+       {
+        "value": 17.5
+       },
+       {
+        "value": 0.5
+       },
+       {
+        "value": "=MAX(D2-C2-E2,0)"
+       },
+       {
+        "value": "=MAX(F2-8,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": "2026-10-13"
+       },
+       {
+        "value": "Tue"
+       },
+       {
+        "value": 8.75
+       },
+       {
+        "value": 17.25
+       },
+       {
+        "value": 0.5
+       },
+       {
+        "value": "=MAX(D3-C3-E3,0)"
+       },
+       {
+        "value": "=MAX(F3-8,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": "2026-10-14"
+       },
+       {
+        "value": "Wed"
+       },
+       {
+        "value": 9.0
+       },
+       {
+        "value": 18.0
+       },
+       {
+        "value": 1
+       },
+       {
+        "value": "=MAX(D4-C4-E4,0)"
+       },
+       {
+        "value": "=MAX(F4-8,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": "2026-10-15"
+       },
+       {
+        "value": "Thu"
+       },
+       {
+        "value": 9.25
+       },
+       {
+        "value": 17.0
+       },
+       {
+        "value": 0.5
+       },
+       {
+        "value": "=MAX(D5-C5-E5,0)"
+       },
+       {
+        "value": "=MAX(F5-8,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": "2026-10-16"
+       },
+       {
+        "value": "Fri"
+       },
+       {
+        "value": 9.0
+       },
+       {
+        "value": 16.0
+       },
+       {
+        "value": 0.5
+       },
+       {
+        "value": "=MAX(D6-C6-E6,0)"
+       },
+       {
+        "value": "=MAX(F6-8,0)"
+       }
+      ]
+     },
+     {
+      "kind": "total",
+      "cells": [
+       {
+        "value": "Total"
+       },
+       {
+        "value": null
+       },
+       {
+        "value": null
+       },
+       {
+        "value": null
+       },
+       {
+        "value": "=SUM(E2:E6)"
+       },
+       {
+        "value": "=SUM(F2:F6)"
+       },
+       {
+        "value": "=SUM(G2:G6)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": "Hourly rate"
+       },
+       {
+        "value": null
+       },
+       {
+        "value": null
+       },
+       {
+        "value": null
+       },
+       {
+        "value": null
+       },
+       {
+        "value": 32,
+        "format": "currency"
+       }
+      ]
+     },
+     {
+      "kind": "total",
+      "cells": [
+       {
+        "value": "Gross pay"
+       },
+       {
+        "value": null
+       },
+       {
+        "value": null
+       },
+       {
+        "value": null
+       },
+       {
+        "value": null
+       },
+       {
+        "value": "=(F7-G7)*F8+G7*F8*1.5",
+        "format": "currency"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

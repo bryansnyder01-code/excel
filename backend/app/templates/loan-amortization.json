@@ -1,0 +1,1467 @@
+{
+ "id": "loan-amortization",
+ "title": "Loan amortization",
+ "category": "Finance",
+ "description": "Monthly payment, interest and principal schedule for a 5-year loan.",
+ "workbook": {
+  "title": "Loan Amortization",
+  "sheets": [
+   {
+    "name": "Loan",
+    "columns": [
+     {
+      "header": "Input",
+      "format": "text",
+      "width": 22
+     },
+     {
+      "header": "Value",
+      "format": "currency"
+     }
+    ],
+    "rows": [
+     {
+      "cells": [
+       {
+        "value": "Loan amount"
+       },
+       {
+        "value": 25000
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": "Annual interest rate"
+       },
+       {
+        "value": 0.065,
+        "format": "percent"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": "Term (years)"
+       },
+       {
+        "value": 5,
+        "format": "integer"
+       }
+      ]
+     },
+     {
+      "kind": "total",
+      "cells": [
+       {
+        "value": "Monthly payment"
+       },
+       {
+        "value": "=-PMT(B3/12,B4*12,B2)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": "Total interest"
+       },
+       {
+        "value": "='Schedule'!D62"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Schedule",
+    "columns": [
+     {
+      "header": "Month",
+      "format": "integer"
+     },
+     {
+      "header": "Opening balance",
+      "format": "currency"
+     },
+     {
+      "header": "Payment",
+      "format": "currency"
+     },
+     {
+      "header": "Interest",
+      "format": "currency"
+     },
+     {
+      "header": "Principal",
+      "format": "currency"
+     },
+     {
+      "header": "Closing balance",
+      "format": "currency"
+     }
+    ],
+    "rows": [
+     {
+      "cells": [
+       {
+        "value": 1
+       },
+       {
+        "value": "='Loan'!B2"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B2*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C2-D2"
+       },
+       {
+        "value": "=MAX(B2-E2,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 2
+       },
+       {
+        "value": "=F2"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B3*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C3-D3"
+       },
+       {
+        "value": "=MAX(B3-E3,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 3
+       },
+       {
+        "value": "=F3"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B4*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C4-D4"
+       },
+       {
+        "value": "=MAX(B4-E4,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 4
+       },
+       {
+        "value": "=F4"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B5*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C5-D5"
+       },
+       {
+        "value": "=MAX(B5-E5,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 5
+       },
+       {
+        "value": "=F5"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B6*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C6-D6"
+       },
+       {
+        "value": "=MAX(B6-E6,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 6
+       },
+       {
+        "value": "=F6"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B7*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C7-D7"
+       },
+       {
+        "value": "=MAX(B7-E7,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 7
+       },
+       {
+        "value": "=F7"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B8*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C8-D8"
+       },
+       {
+        "value": "=MAX(B8-E8,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 8
+       },
+       {
+        "value": "=F8"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B9*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C9-D9"
+       },
+       {
+        "value": "=MAX(B9-E9,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 9
+       },
+       {
+        "value": "=F9"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B10*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C10-D10"
+       },
+       {
+        "value": "=MAX(B10-E10,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 10
+       },
+       {
+        "value": "=F10"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B11*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C11-D11"
+       },
+       {
+        "value": "=MAX(B11-E11,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 11
+       },
+       {
+        "value": "=F11"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B12*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C12-D12"
+       },
+       {
+        "value": "=MAX(B12-E12,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 12
+       },
+       {
+        "value": "=F12"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B13*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C13-D13"
+       },
+       {
+        "value": "=MAX(B13-E13,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 13
+       },
+       {
+        "value": "=F13"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B14*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C14-D14"
+       },
+       {
+        "value": "=MAX(B14-E14,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 14
+       },
+       {
+        "value": "=F14"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B15*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C15-D15"
+       },
+       {
+        "value": "=MAX(B15-E15,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 15
+       },
+       {
+        "value": "=F15"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B16*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C16-D16"
+       },
+       {
+        "value": "=MAX(B16-E16,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 16
+       },
+       {
+        "value": "=F16"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B17*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C17-D17"
+       },
+       {
+        "value": "=MAX(B17-E17,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 17
+       },
+       {
+        "value": "=F17"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B18*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C18-D18"
+       },
+       {
+        "value": "=MAX(B18-E18,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 18
+       },
+       {
+        "value": "=F18"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B19*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C19-D19"
+       },
+       {
+        "value": "=MAX(B19-E19,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 19
+       },
+       {
+        "value": "=F19"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B20*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C20-D20"
+       },
+       {
+        "value": "=MAX(B20-E20,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 20
+       },
+       {
+        "value": "=F20"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B21*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C21-D21"
+       },
+       {
+        "value": "=MAX(B21-E21,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 21
+       },
+       {
+        "value": "=F21"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B22*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C22-D22"
+       },
+       {
+        "value": "=MAX(B22-E22,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 22
+       },
+       {
+        "value": "=F22"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B23*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C23-D23"
+       },
+       {
+        "value": "=MAX(B23-E23,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 23
+       },
+       {
+        "value": "=F23"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B24*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C24-D24"
+       },
+       {
+        "value": "=MAX(B24-E24,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 24
+       },
+       {
+        "value": "=F24"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B25*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C25-D25"
+       },
+       {
+        "value": "=MAX(B25-E25,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 25
+       },
+       {
+        "value": "=F25"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B26*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C26-D26"
+       },
+       {
+        "value": "=MAX(B26-E26,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 26
+       },
+       {
+        "value": "=F26"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B27*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C27-D27"
+       },
+       {
+        "value": "=MAX(B27-E27,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 27
+       },
+       {
+        "value": "=F27"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B28*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C28-D28"
+       },
+       {
+        "value": "=MAX(B28-E28,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 28
+       },
+       {
+        "value": "=F28"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B29*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C29-D29"
+       },
+       {
+        "value": "=MAX(B29-E29,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 29
+       },
+       {
+        "value": "=F29"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B30*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C30-D30"
+       },
+       {
+        "value": "=MAX(B30-E30,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 30
+       },
+       {
+        "value": "=F30"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B31*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C31-D31"
+       },
+       {
+        "value": "=MAX(B31-E31,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 31
+       },
+       {
+        "value": "=F31"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B32*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C32-D32"
+       },
+       {
+        "value": "=MAX(B32-E32,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 32
+       },
+       {
+        "value": "=F32"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B33*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C33-D33"
+       },
+       {
+        "value": "=MAX(B33-E33,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 33
+       },
+       {
+        "value": "=F33"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B34*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C34-D34"
+       },
+       {
+        "value": "=MAX(B34-E34,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 34
+       },
+       {
+        "value": "=F34"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B35*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C35-D35"
+       },
+       {
+        "value": "=MAX(B35-E35,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 35
+       },
+       {
+        "value": "=F35"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B36*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C36-D36"
+       },
+       {
+        "value": "=MAX(B36-E36,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 36
+       },
+       {
+        "value": "=F36"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B37*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C37-D37"
+       },
+       {
+        "value": "=MAX(B37-E37,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 37
+       },
+       {
+        "value": "=F37"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B38*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C38-D38"
+       },
+       {
+        "value": "=MAX(B38-E38,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 38
+       },
+       {
+        "value": "=F38"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B39*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C39-D39"
+       },
+       {
+        "value": "=MAX(B39-E39,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 39
+       },
+       {
+        "value": "=F39"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B40*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C40-D40"
+       },
+       {
+        "value": "=MAX(B40-E40,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 40
+       },
+       {
+        "value": "=F40"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B41*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C41-D41"
+       },
+       {
+        "value": "=MAX(B41-E41,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 41
+       },
+       {
+        "value": "=F41"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B42*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C42-D42"
+       },
+       {
+        "value": "=MAX(B42-E42,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 42
+       },
+       {
+        "value": "=F42"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B43*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C43-D43"
+       },
+       {
+        "value": "=MAX(B43-E43,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 43
+       },
+       {
+        "value": "=F43"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B44*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C44-D44"
+       },
+       {
+        "value": "=MAX(B44-E44,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 44
+       },
+       {
+        "value": "=F44"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B45*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C45-D45"
+       },
+       {
+        "value": "=MAX(B45-E45,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 45
+       },
+       {
+        "value": "=F45"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B46*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C46-D46"
+       },
+       {
+        "value": "=MAX(B46-E46,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 46
+       },
+       {
+        "value": "=F46"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B47*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C47-D47"
+       },
+       {
+        "value": "=MAX(B47-E47,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 47
+       },
+       {
+        "value": "=F47"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B48*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C48-D48"
+       },
+       {
+        "value": "=MAX(B48-E48,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 48
+       },
+       {
+        "value": "=F48"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B49*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C49-D49"
+       },
+       {
+        "value": "=MAX(B49-E49,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 49
+       },
+       {
+        "value": "=F49"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B50*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C50-D50"
+       },
+       {
+        "value": "=MAX(B50-E50,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 50
+       },
+       {
+        "value": "=F50"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B51*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C51-D51"
+       },
+       {
+        "value": "=MAX(B51-E51,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 51
+       },
+       {
+        "value": "=F51"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B52*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C52-D52"
+       },
+       {
+        "value": "=MAX(B52-E52,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 52
+       },
+       {
+        "value": "=F52"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B53*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C53-D53"
+       },
+       {
+        "value": "=MAX(B53-E53,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 53
+       },
+       {
+        "value": "=F53"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B54*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C54-D54"
+       },
+       {
+        "value": "=MAX(B54-E54,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 54
+       },
+       {
+        "value": "=F54"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B55*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C55-D55"
+       },
+       {
+        "value": "=MAX(B55-E55,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 55
+       },
+       {
+        "value": "=F55"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B56*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C56-D56"
+       },
+       {
+        "value": "=MAX(B56-E56,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 56
+       },
+       {
+        "value": "=F56"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B57*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C57-D57"
+       },
+       {
+        "value": "=MAX(B57-E57,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 57
+       },
+       {
+        "value": "=F57"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B58*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C58-D58"
+       },
+       {
+        "value": "=MAX(B58-E58,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 58
+       },
+       {
+        "value": "=F58"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B59*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C59-D59"
+       },
+       {
+        "value": "=MAX(B59-E59,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 59
+       },
+       {
+        "value": "=F59"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B60*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C60-D60"
+       },
+       {
+        "value": "=MAX(B60-E60,0)"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": 60
+       },
+       {
+        "value": "=F60"
+       },
+       {
+        "value": "=-PMT('Loan'!$B$3/12,'Loan'!$B$4*12,'Loan'!$B$2)"
+       },
+       {
+        "value": "=B61*'Loan'!$B$3/12"
+       },
+       {
+        "value": "=C61-D61"
+       },
+       {
+        "value": "=MAX(B61-E61,0)"
+       }
+      ]
+     },
+     {
+      "kind": "total",
+      "cells": [
+       {
+        "value": "Total"
+       },
+       {
+        "value": null
+       },
+       {
+        "value": "=SUM(C2:C61)"
+       },
+       {
+        "value": "=SUM(D2:D61)"
+       },
+       {
+        "value": "=SUM(E2:E61)"
+       },
+       {
+        "value": null
+       }
+      ]
+     }
+    ],
+    "charts": [
+     {
+      "type": "line",
+      "title": "Remaining balance",
+      "categories": "A2:A61",
+      "series": [
+       {
+        "name": "Closing balance",
+        "range": "F2:F61"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

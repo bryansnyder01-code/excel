@@ -1,0 +1,294 @@
+{
+ "id": "inventory",
+ "title": "Inventory tracker",
+ "category": "Operations",
+ "description": "Stock levels, reorder points, stock value and a reorder flag.",
+ "workbook": {
+  "title": "Inventory Tracker",
+  "sheets": [
+   {
+    "name": "Inventory",
+    "columns": [
+     {
+      "header": "SKU",
+      "format": "text"
+     },
+     {
+      "header": "Item",
+      "format": "text",
+      "width": 22
+     },
+     {
+      "header": "Category",
+      "format": "text"
+     },
+     {
+      "header": "In stock",
+      "format": "integer"
+     },
+     {
+      "header": "Reorder at",
+      "format": "integer"
+     },
+     {
+      "header": "Unit cost",
+      "format": "currency"
+     },
+     {
+      "header": "Stock value",
+      "format": "currency"
+     },
+     {
+      "header": "Status",
+      "format": "text"
+     }
+    ],
+    "rows": [
+     {
+      "cells": [
+       {
+        "value": "SKU-001"
+       },
+       {
+        "value": "Wireless mouse"
+       },
+       {
+        "value": "Electronics"
+       },
+       {
+        "value": 42
+       },
+       {
+        "value": 15
+       },
+       {
+        "value": 18.5
+       },
+       {
+        "value": "=D2*F2"
+       },
+       {
+        "value": "=IF(D2<=E2,\"Reorder\",\"OK\")"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": "SKU-002"
+       },
+       {
+        "value": "USB-C cable"
+       },
+       {
+        "value": "Electronics"
+       },
+       {
+        "value": 8
+       },
+       {
+        "value": 25
+       },
+       {
+        "value": 6.2
+       },
+       {
+        "value": "=D3*F3"
+       },
+       {
+        "value": "=IF(D3<=E3,\"Reorder\",\"OK\")"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": "SKU-003"
+       },
+       {
+        "value": "Notebook A5"
+       },
+       {
+        "value": "Stationery"
+       },
+       {
+        "value": 120
+       },
+       {
+        "value": 40
+       },
+       {
+        "value": 2.1
+       },
+       {
+        "value": "=D4*F4"
+       },
+       {
+        "value": "=IF(D4<=E4,\"Reorder\",\"OK\")"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": "SKU-004"
+       },
+       {
+        "value": "Desk lamp"
+       },
+       {
+        "value": "Furniture"
+       },
+       {
+        "value": 5
+       },
+       {
+        "value": 10
+       },
+       {
+        "value": 34.0
+       },
+       {
+        "value": "=D5*F5"
+       },
+       {
+        "value": "=IF(D5<=E5,\"Reorder\",\"OK\")"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": "SKU-005"
+       },
+       {
+        "value": "Stapler"
+       },
+       {
+        "value": "Stationery"
+       },
+       {
+        "value": 18
+       },
+       {
+        "value": 10
+       },
+       {
+        "value": 7.5
+       },
+       {
+        "value": "=D6*F6"
+       },
+       {
+        "value": "=IF(D6<=E6,\"Reorder\",\"OK\")"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": "SKU-006"
+       },
+       {
+        "value": "Monitor stand"
+       },
+       {
+        "value": "Furniture"
+       },
+       {
+        "value": 11
+       },
+       {
+        "value": 8
+       },
+       {
+        "value": 45.0
+       },
+       {
+        "value": "=D7*F7"
+       },
+       {
+        "value": "=IF(D7<=E7,\"Reorder\",\"OK\")"
+       }
+      ]
+     },
+     {
+      "cells": [
+       {
+        "value": "SKU-007"
+       },
+       {
+        "value": "Webcam"
+       },
+       {
+        "value": "Electronics"
+       },
+       {
+        "value": 3
+       },
+       {
+        "value": 6
+       },
+       {
+        "value": 59.0
+       },
+       {
+        "value": "=D8*F8"
+       },
+       {
+        "value": "=IF(D8<=E8,\"Reorder\",\"OK\")"
+       }
+      ]
+     },
+     {
+      "kind": "total",
+      "cells": [
+       {
+        "value": "Total"
+       },
+       {
+        "value": null
+       },
+       {
+        "value": null
+       },
+       {
+        "value": "=SUM(D2:D8)"
+       },
+       {
+        "value": null
+       },
+       {
+        "value": null
+       },
+       {
+        "value": "=SUM(G2:G8)"
+       },
+       {
+        "value": "=COUNTIF(H2:H8,\"Reorder\")&\" to reorder\""
+       }
+      ]
+     }
+    ],
+    "validations": [
+     {
+      "range": "C2:C200",
+      "type": "list",
+      "options": [
+       "Electronics",
+       "Stationery",
+       "Furniture",
+       "Other"
+      ]
+     },
+     {
+      "range": "D2:E200",
+      "type": "whole",
+      "min": 0,
+      "message": "Enter a whole number of 0 or more."
+     }
+    ]
+   }
+  ]
+ }
+}
