@@ -10,7 +10,7 @@ encrypted with the system keychain where available. **File → Change API key** 
 
 Easiest: let GitHub build them. Push the project to GitHub, open **Actions → Desktop app →
 Run workflow** (or push a tag such as `v1.0.0`). When the run finishes, download
-`SheetCraft-AI-Windows` (the `.exe` installer) and `SheetCraft-AI-macOS` (the `.dmg`) from the
+`SheetCraft-AI-Windows` (the `.exe` installer) and `SheetCraft-AI-macOS-…` (the `.dmg`) from the
 run's **Artifacts**.
 
 The installers aren't code-signed yet, so the first time:
@@ -25,7 +25,7 @@ Developer ID with notarization. electron-builder picks them up from `CSC_LINK` /
 notarization) set as GitHub secrets; then drop `CSC_IDENTITY_AUTO_DISCOVERY` from
 `.github/workflows/desktop.yml` and `"identity": "-"` from `package.json`.
 
-The Mac build is for Apple Silicon (M1 and later). Intel Macs need a build on an Intel runner.
+There are two Mac builds: `SheetCraft-AI-macOS-AppleSilicon` (M1 and later) and `SheetCraft-AI-macOS-Intel`. The Intel one also runs on Apple Silicon Macs, so use whichever finished.
 
 ## Building it yourself
 

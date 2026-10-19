@@ -1,6 +1,7 @@
 name: Desktop app
 
-# Builds the Windows installer (.exe) and the Mac app (.dmg, Apple Silicon).
+# Builds the Windows installer (.exe) and the Mac app (.dmg) for Apple Silicon and for Intel.
+# The Intel build also runs on Apple Silicon Macs (through Rosetta), so either one works there.
 # Run it from the Actions tab ("Run workflow"), or push a tag like v1.0.0.
 # The installers appear under the run's "Artifacts".
 on:
@@ -17,9 +18,15 @@ jobs:
           - os: windows-latest
             target: --win
             files: desktop/dist/*.exe
+            name: Windows
           - os: macos-latest
             target: --mac
             files: desktop/dist/*.dmg
+            name: macOS-AppleSilicon
+          - os: macos-15-intel
+            target: --mac
+            files: desktop/dist/*.dmg
+            name: macOS-Intel
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
@@ -52,6 +59,6 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: SheetCraft-AI-${{ runner.os }}
+          name: SheetCraft-AI-${{ matrix.name }}
           path: ${{ matrix.files }}
           if-no-files-found: error
