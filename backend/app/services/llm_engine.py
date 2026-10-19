@@ -61,6 +61,25 @@ ASK_MAX_ROWS = 300
 ASK_MAX_FORMULAS = 400
 
 
+def _api_error_text(e: anthropic.APIStatusError) -> str:
+    """Anthropic's own explanation from an error response, or ""."""
+    body = e.body if isinstance(e.body, dict) else {}
+    err = body.get("error") if isinstance(body.get("error"), dict) else body
+    return str(err.get("message") or "").strip()
+
+
+def _bad_request_message(e: anthropic.BadRequestError) -> str:
+    """A 400 is usually about the account (no credits) or the request, rarely the user's wording,
+    so say what Anthropic said instead of asking them to rephrase."""
+    detail = _api_error_text(e)
+    if re.search(r"credit balance|billing|purchase credits", detail, re.I):
+        return ("Your Anthropic account has no credits left. Add credits at "
+                "https://console.anthropic.com/settings/billing, then try again.")
+    if detail:
+        return f"Claude couldn't take this request: {detail}"
+    return "The request could not be processed. Try rephrasing it."
+
+
 class EngineError(RuntimeError):
     """The model could not produce a usable workbook. The message is safe to show users."""
 
@@ -216,7 +235,7 @@ class WorkbookEngine:
             raise EngineError("The AI service is busy right now. Please try again in a moment.") from e
         except anthropic.BadRequestError as e:
             log.exception("Bad request to the model")
-            raise EngineError("The request could not be processed. Try rephrasing it.") from e
+            raise EngineError(_bad_request_message(e)) from e
         except (anthropic.AuthenticationError, anthropic.PermissionDeniedError) as e:
             log.exception("API key rejected")
             hint = " Change it from the app's menu (Change API key)." if self.settings.static_dir else ""
